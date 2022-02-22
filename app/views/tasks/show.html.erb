@@ -1,0 +1,17 @@
+<h1>Minha Tarefa</h1>
+
+<h2>
+  <% if @task.completed %>
+    <p>[x] <%= @task.title %> </p>
+  <%else %>
+    <p>[ ] <%= @task.title %></p>
+  <% end %>
+</h2>
+<p><%= @task.details %></p>
+<hr>
+<%= link_to "edit task", edit_path(@task) %>
+<%= link_to "delete task",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Certeza?" } %>
+<%= link_to "view all tasks", root_path %>
