@@ -3,10 +3,10 @@
 <div>
   <% @tasks.each do |task| %>
     <% if task.completed %>
-      <p>[x] <%= link_to task.title, task_path(task) %> </p>
+      <p><i class="fa-regular fa-circle-check"></i> <%= link_to task.title, task_path(task) %> </p>
       <p class="delete"> delete task</p>
     <%else %>
-      <p>[ ] <%= link_to task.title, task_path(task) %></p>
+      <p><i class="fa-regular fa-circle"></i> <%= link_to task.title, task_path(task) %></p>
       <p class="delete"> delete task</p>
     <% end %>
   <% end %>
